@@ -1,0 +1,9 @@
+<launch>
+<include file="$(find fetch_navigation)/launch/fetch_nav.launch">
+<arg name="map_file"
+value="/home/dyandra/catkin_ws/src/sc_project/map/sc_worldmap.yaml"/>
+</include>
+<node pkg="rviz" type="rviz" name="$(anon rviz)"
+args="-d $(find sc_project)/config/navigation.rviz">
+</node>
+</launch> 
