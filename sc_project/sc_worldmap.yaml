@@ -1,0 +1,7 @@
+image: /home/dyandra/catkin_ws/src/sc_project/map/sc_worldmap.pgm
+resolution: 0.050000
+origin: [-10.267451, -10.174477, 0.000000]
+negate: 0
+occupied_thresh: 0.65
+free_thresh: 0.196
+
