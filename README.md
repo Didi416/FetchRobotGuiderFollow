@@ -30,5 +30,24 @@ Ensure you have the following packages to run this system:
 - aruco_ros (https://github.com/pal-robotics/aruco_ros/tree/melodic-devel)
 - opencv/opencv_contrib (https://linuxize.com/post/how-to-install-opencv-on-ubuntu-18-04/#google_vignette)
 - vision_visp (http://wiki.ros.org/vision_visp)
-## How to run
-
+## Installation
+```
+cd ~/catkin_ws/src
+git clone https://github.com/Didi416/FetchRobotGuiderFollow.git
+cd ~/catkin_ws
+catkin_make
+```
+### Operation
+First launch the environment with the office space, Fetch robot and turtlebot/ArUco guider:
+```
+roslaunch sc_project sc_fetch.launch
+```
+Launch teleoperation node to be abel to manually control the movement of the guider. /cmd_vel is set to control the turtlebot instead of the Fecth robot:
+```
+rosrun teleop_twist_keyboard teleop_twist_keyboard.py /cmd_vel:=/robot1/cmd_vel _key_timeout:=0.6
+```
+Launch the tracker module for the Fetch to start searching for and detecting the ArUco marker and following behind by 1m. 
+```
+roslaunch sc_project track_marker.launch
+```
+The guider can be controlled by the user in any direction they want. Unfortunately, the aruco_ros topics had issues (we believe) with the subscriber and publisher nodes, with the Image topic /aruco_single/result in RIVZ not receiving any images. We were unable to resolve this issue, and so unfortunately not able to make the Fetch robot detect the ArUco marker and follow behind it.
