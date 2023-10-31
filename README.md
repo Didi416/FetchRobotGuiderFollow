@@ -50,4 +50,8 @@ Launch the tracker module for the Fetch to start searching for and detecting the
 ```
 roslaunch sc_project track_marker.launch
 ```
+To visualise the Fecth head camera:
+```
+rosrun rviz rviz -d 
+```
 The guider can be controlled by the user in any direction they want. Unfortunately, the aruco_ros topics had issues (we believe) with the subscriber and publisher nodes, with the Image topic /aruco_single/result in RIVZ not receiving any images. We were unable to resolve this issue, and so unfortunately not able to make the Fetch robot detect the ArUco marker and follow behind it.
