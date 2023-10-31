@@ -29,5 +29,6 @@ Ensure you have the following packages to run this system:
 - turtlebot3 (all packages) (https://emanual.robotis.com/docs/en/platform/turtlebot3/quick-start/ and https://emanual.robotis.com/docs/en/platform/turtlebot3/simulation/#gazebo-simulation)
 - aruco_ros (https://github.com/pal-robotics/aruco_ros/tree/melodic-devel)
 - opencv/opencv_contrib (https://linuxize.com/post/how-to-install-opencv-on-ubuntu-18-04/#google_vignette)
+- vision_visp (http://wiki.ros.org/vision_visp)
 ## How to run
 
