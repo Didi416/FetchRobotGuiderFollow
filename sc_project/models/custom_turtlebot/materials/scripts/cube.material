@@ -1,0 +1,14 @@
+material cube
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture aruco_marker36.png
+	scale 1 1
+      }
+    }
+  }
+}
