@@ -37,10 +37,14 @@ git clone https://github.com/Didi416/FetchRobotGuiderFollow.git
 cd ~/catkin_ws
 catkin_make
 ```
-### Operation
+## Operation
 First launch the environment with the office space, Fetch robot and turtlebot/ArUco guider:
 ```
 roslaunch sc_project sc_fetch.launch
+```
+If turtlebot3 and/or ArUco marker do not spawn, run this command to copy the model file into a more accessible location for Gazebo to locate. You may have to create a /models folder with in /.gazebo, which can be access through the file system GUI home page by Ctr+H:
+```
+cp -avr ~/catkin_ws/src/sc_project/models/ ~/.gazebo/models
 ```
 Launch teleoperation node to be abel to manually control the movement of the guider. /cmd_vel is set to control the turtlebot instead of the Fecth robot:
 ```
@@ -50,8 +54,14 @@ Launch the tracker module for the Fetch to start searching for and detecting the
 ```
 roslaunch sc_project track_marker.launch
 ```
-To visualise the Fecth head camera:
+To visualise the Fetch head camera and test 2D Navigation:
 ```
-rosrun rviz rviz -d 
+roslaunch sc_project navigation.launch
 ```
 The guider can be controlled by the user in any direction they want. Unfortunately, the aruco_ros topics had issues (we believe) with the subscriber and publisher nodes, with the Image topic /aruco_single/result in RIVZ not receiving any images. We were unable to resolve this issue, and so unfortunately not able to make the Fetch robot detect the ArUco marker and follow behind it.
+
+## Demonstration Video
+
+https://youtu.be/BKcI6zGyTrc
+
+
